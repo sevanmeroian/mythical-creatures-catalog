@@ -1,70 +1,78 @@
-html,
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    padding: 2rem;
 }
 
-.main-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
+header {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.title {
-  text-align: center;
-  margin: 0;
-  font-size: 8em;
-  font-family: "Helvetica";
-  font-weight: normal;
-  color: white;
+    header h1 {
+        font-size: 3rem;
+        color: #222;
+    }
+
+    header p {
+        color: #666;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+/* Card Grid Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-#card-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-}
-
+/* Individual Card Styles */
 .card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
 }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
 .card-content {
-  padding: 20px;
-  font-family: "Verdana";
-  color: #777;
+    padding: 1rem;
 }
 
-.card-content h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
+    .card-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
 
-.card img {
-  width: 100%;
-  height: auto;
-}
+    .card-content ul {
+        list-style-type: disc;
+        padding-left: 1.2rem;
+        color: #555;
+    }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 10px;
-}
-
-button {
-  text-align: center;
-  background-color: #666;
-  border: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 40px;
-  border-radius: 10px;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-  margin: 5px;
+/* Footer */
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
 }
