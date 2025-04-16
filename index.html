@@ -1,27 +1,68 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hair Catalog</title>
+    <title>Mythical Creatures Catalog</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    `
     <header>
-        <h1>Hair Catalog</h1>
-        <p>Explore unique hairstyles by color, type, and texture</p>
+        <h1 onclick="showSection('catalog')">🧙‍♀️ Mythical Creatures Catalog</h1>
+        <p class="subtitle">Explore the mystical, the magical, and the legendary</p>
     </header>
 
-    <main>
-        <section id="card-container" class="card-grid">
+    <nav>
+        <ul>
+            <li><button onclick="showSection('catalog')">📖 Catalog</button></li>
+            <li><button onclick="showSection('create')">✨ Create</button></li>
+            <li><button onclick="showSection('about')">📜 About</button></li>
+        </ul>
+    </nav>
 
+    <main>
+        <section id="catalog" class="page-section">
+            <div id="card-container"></div>
+            <div id="catalog-nav" class="catalog-nav"></div>
+        </section>
+
+        <section id="create" class="page-section">
+            <div class="form-wrapper">
+                <h2>📝 Create Your Own Creature</h2>
+                <form id="create-form">
+                    <input id="name" placeholder="Name" required />
+                    <input id="origin" placeholder="Origin" required />
+                    <input id="region" placeholder="Region" required />
+                    <input id="size" placeholder="Size" required />
+                    <input id="colors" placeholder="Colors" required />
+                    <input id="shapes" placeholder="Shapes" required />
+                    <input id="temperament" placeholder="Temperament" required />
+                    <input id="weakness" placeholder="Weakness" required />
+                    <input id="mythPurpose" placeholder="Myth Purpose" required />
+                    <textarea id="funFact" placeholder="Fun Fact" rows="3" required></textarea>
+
+                    <label class="draw-label">🖌️ Draw your creature:</label>
+                    <canvas id="canvas" width="300" height="200"></canvas>
+                    <button type="button" onclick="clearCanvas()" class="clear-btn">Clear Drawing</button>
+                    <button type="submit" class="add-btn">Add to Catalog</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="about" class="page-section">
+            <div class="about-content">
+                <h2>📜 About This Catalog</h2>
+                <p>This catalog is a celebration of fantasy, folklore, and mythical imagination. From dragons to phoenixes, explore each creature and what it represents in different cultures.</p>
+                <p>You can even add your own legendary beast and draw it with your own hands! Whether you're a fan of folklore or just curious about creatures from around the world, this interactive catalog brings myths to life.</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Created by Sevan�</p>
+        <p>🧙‍♂️ Built with magic</p>
     </footer>
 
+    <script src="scripts.js"></script>
 </body>
 </html>
